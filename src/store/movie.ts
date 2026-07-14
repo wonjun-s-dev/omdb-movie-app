@@ -74,6 +74,7 @@ export const searchMovies = async (page: number) => {
       method: 'POST',
       body: JSON.stringify({ title: store.state.searchText, page }),
     });
+    console.log('res:', await res.json());
   } catch (error) {
     console.log('searchMovies error:', error);
   } finally {
