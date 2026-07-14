@@ -8,7 +8,7 @@ interface State {
   }[];
 }
 
-export class TheHeader extends Component {
+export default class TheHeader extends Component {
   public state!: State;
   constructor() {
     super({

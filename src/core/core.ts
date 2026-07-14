@@ -86,7 +86,7 @@ export class Store<S> {
   constructor(state: S) {
     for (const key in state) {
       Object.defineProperty(this.state, key, {
-        get: () => this.state[key],
+        get: () => state[key],
         set: (val) => {
           state[key] = val;
           if (Array.isArray(this.observers[key])) {
