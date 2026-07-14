@@ -78,6 +78,21 @@ header .user:hover {
 header .user img {
   width: 100%;
 }
+.headline {
+  margin-bottom: 40px;
+}
+.headline h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: 40px;
+}
+.headline h1 span {
+  color: var(--color-primary);
+}
+.headline p {
+  color: var(--color-white-30);
+}
 
 footer {
   padding: 40px 40px 60px;
