@@ -74,10 +74,30 @@ export const searchMovies = async (page: number) => {
       method: 'POST',
       body: JSON.stringify({ title: store.state.searchText, page }),
     });
-    console.log('res:', await res.json());
+
+    const { Search, totalResults, Response, Error } = await res.json();
+
+    if (Response === 'True') {
+      store.state.movies = [...store.state.movies, ...Search];
+      store.state.pageMax = Math.ceil(Number(totalResults) / 10);
+    } else {
+      store.state.message = Error;
+      store.state.pageMax = 1;
+    }
   } catch (error) {
     console.log('searchMovies error:', error);
   } finally {
     store.state.loading = false;
+  }
+};
+
+export const getMovieDetails = async (id: string) => {
+  try {
+    const res = await fetch('/api/movie', {
+      method: 'POST',
+      body: JSON.stringify({ id }),
+    });
+  } catch (error) {
+    console.log('getMovieDetails error:', error);
   }
 };
