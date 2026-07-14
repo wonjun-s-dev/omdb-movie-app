@@ -60,3 +60,23 @@ const store = new Store<State>({
 });
 
 export default store;
+export const searchMovies = async (page: number) => {
+  store.state.loading = true;
+  store.state.page = page;
+
+  if (page === 1) {
+    store.state.movies = [];
+    store.state.message = '';
+  }
+
+  try {
+    const res = await fetch('/api/movie', {
+      method: 'POST',
+      body: JSON.stringify({ title: store.state.searchText, page }),
+    });
+  } catch (error) {
+    console.log('searchMovies error:', error);
+  } finally {
+    store.state.loading = false;
+  }
+};
