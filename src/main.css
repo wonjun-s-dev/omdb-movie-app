@@ -18,6 +18,12 @@ body {
   color: var(--color-white);
 }
 
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
 header {
   padding: 20px 40px;
   background-color: rgba(14,17,27,.9);
@@ -63,6 +69,7 @@ header .user {
   right: 40px;
   margin: auto;
   transition: .3s;
+  overflow: hidden;
 }
 header .user:hover {
   transform: scale(1.2);
@@ -81,6 +88,31 @@ footer a {
   text-decoration: none;
 }
 footer a:hover {
+  text-decoration: underline;
+}
+
+.about .photo {
+  width: 230px;
+  height: 230px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background-size: cover;
+}
+.about .name {
+  font-size: 40px;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 20px;
+}
+.about p {
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 4px;
+}
+.about a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.about a:hover {
   text-decoration: underline;
 }
 
