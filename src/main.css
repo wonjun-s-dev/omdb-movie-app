@@ -1,0 +1,73 @@
+html {
+  --color-black: #0E111B;
+  --color-white: #FFF;
+  --color-white-50: rgba(255, 255, 255, 0.5);
+  --color-white-30: rgba(255, 255, 255, 0.3);
+  --color-white-20: rgba(255, 255, 255, 0.2);
+  --color-white-10: rgba(255, 255, 255, 0.1);
+  --color-white-5: rgba(255, 255, 255, 0.05);
+  --color-primary: #FDC000;
+  --color-hover: #F86A05;
+  --color-area: #1C212E;
+}
+
+body {
+  background-color: var(--color-black);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  color: var(--color-white);
+}
+
+header {
+  padding: 20px 40px;
+  background-color: rgba(14,17,27,.9);
+  position: sticky;
+  top:0;
+  z-index: 9;
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+}
+header .logo {
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  color: var(--color-white-50);
+  text-decoration: none;
+}
+header .logo span {
+  color: var(--color-primary);
+}
+header nav ul {
+  display: flex;
+  gap: 14px;
+}
+header nav ul li a {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-white-50);
+  text-decoration: none;
+}
+header nav ul li a.active {
+  color: var(--color-primary);
+}
+
+header .user {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-area);
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 40px;
+  margin: auto;
+  transition: .3s;
+}
+header .user:hover {
+  transform: scale(1.2);
+}
+
+header .user img {
+  width: 100%;
+}
