@@ -97,6 +97,7 @@ export const getMovieDetails = async (id: string) => {
       method: 'POST',
       body: JSON.stringify({ id }),
     });
+    store.state.movie = await res.json();
   } catch (error) {
     console.log('getMovieDetails error:', error);
   }
